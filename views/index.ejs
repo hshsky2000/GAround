@@ -2,7 +2,7 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <h1>hello, <%= user ? user.profile.name : "SEI class" %></h1>
+  <h1> <%= user ? user.profile.name : "Login to use" %></h1>
   <% if (user?.profile.avatar) { %>
     <div>
       <img
@@ -11,6 +11,9 @@
       />
     </div>
   <% } %>
+  
+  <h2><a href="/restaurants/new">Add a restaurant!</a></h2>
+  <h2><a href="/restaurants">Show me all the restaurants!</a></h2>
 </main>
 
 <%- include('./partials/footer') %>

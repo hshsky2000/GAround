@@ -3,7 +3,27 @@
 
 <section>
     <h1>restaurants</h1>
-    
+    <%# New Code Below %>
+    <main>
+
+        
+          <tbody>
+            <% restaurants.forEach((m) => { %>
+            <tr>
+              <td><%= m.name %></td>
+              <td><%= m.address %></td>
+              <td><a href="/restaurants/<%= m._id %>">DETAILS</a></td>
+              <td>
+                <form action="/restaurants/<%= m._id %>?_method=DELETE" method="POST">
+                  <button>X</button>
+                </form>
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+        <h2><a href="/">home </a></h2>
+      </main>
 
 
 

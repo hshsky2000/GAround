@@ -1,0 +1,23 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/style.css" />
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <form id="new-form" action="/restaurants" method="POST">
+    <label for="title-input">Name:</label>
+    <input type="text" name="title" id="name-input">
+    
+    <label for="rating">Rating</label>
+    <select name="rating" id="rating">
+      <option value="bad">bad</option>
+      <option value="good">good</option>
+      <option value="amazing">amazing</option>
+      
+    </select>
+    <button type="submit">add review</button>
+    <a href="/restaurants">Add restaurants</a>
+  </form>
+</main>
+
+<%- include("../partials/footer") %>

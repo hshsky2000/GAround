@@ -1,9 +1,35 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<section>
-  <h1>Edit </h1>
- 
-</section>
+<main>
+    <h1><%= title %></h1>
+    <form id="new-form" action="/restaurants/<%= restaurant._id %>?_method=PUT" method="POST">
+      <label for="title-input">Title:</label>
+      <input type="text" name="title" value="<%= restaurant.title %>" id="title-input">
+      <label for="relase-year-input">Release Year:</label>
+      <input 
+        type="text" 
+        name="releaseYear"
+        value="<%= restaurant.releaseYear %>"
+        id="relase-year-input"
+      >
+      <label for="mpaa-rating-select">MPAA Rating</label>
+      <select name="mpaaRating" id="mpaa-rating-select" >
+        <option value="<%= restaurant.mpaaRating %>"><%= restaurant.mpaaRating %></option>
+        <option value="G">G</option>
+        <option value="PG">PG</option>
+        <option value="PG-13">PG-13</option>
+        <option value="R">R</option>
+      </select>
+      <label for="now-showing-checkbox">Now Showing:</label>
+      <input 
+        type="checkbox"
+        name="nowShowing"
+        <%= restaurant.nowShowing ? 'checked' : '' %>
+        id="now-showing-checkbox"
+      >
+      <button type="submit">Save Restaurant</button>
+    </form>
+  </main>
 
 <%- include('../partials/footer') %>

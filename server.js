@@ -68,6 +68,13 @@ app.use('/auth', authRouter)
 app.use('/restaurants', restaurantsRouter)
 app.use('/profiles', profilesRouter)
 
+// mounted routers
+app.use(methodOverride('_method'))
+
+app.use('/', indexRouter)
+app.use('/restaurants', restaurantsRouter)
+
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404))
