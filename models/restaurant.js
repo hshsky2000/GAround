@@ -13,9 +13,7 @@ const restaurantSchema = new Schema({
     name: String,
     address: String,
     phone: Number,
-    review: {
-        type: Schema.Types.ObjectId, 'ref': "Profile"
-    }
+    review: [reviewSchema]
 })
 
 const Restaurant = mongoose.model('Restaurant', restaurantSchema)

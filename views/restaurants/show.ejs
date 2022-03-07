@@ -4,36 +4,16 @@
 <main>
     <h1><%= title %></h1>
     <section>
-      <div>Title: </div>
-      <div><%= restaurant.title %></div>
-      <div>Release Year: </div>
-      <div><%= restaurant.releaseYear %></div>
-      <div>Rating: </div>
-      <div><%= restaurant.mpaaRating %></div>
-      <div>Now Showing: </div>
-      <div><%= restaurant.nowShowing ? 'Yes' : 'Nope' %></div>
-          <% // start cast list %>
-      <div>Cast:</div>
-    <ul>
-      <%- restaurant.cast.map(p => `<li>${p.name}</li>`).join('') %>
-    </ul>
-        <% // end cast list %>
+      <div>Name: </div>
+      <div><%= restaurant.name %></div>
     </section>
-      <% // add to cast form below this comment %>
-    <form id="add-per-to-cast" action="/restaurants/<%= restaurant._id%>/performers " method="POST">
-      <select name="performerId">
-        <%- performers.map(p => `<option value="${p._id}">${p.name}</option>`).join('') %>
-      </select>
-      <button type="submit">Add to Cast</button>
-    </form>
   
     <h2>Reviews</h2>
     <form 
-      id="add-review-form"
-      action="/restaurants/<%= restaurant._id %>/reviews"
+      action="/restaurants/<%= restaurant._id %>/review"
       method="POST"
     >
-      <label for="content-textarea">Review:</label>
+     
       <textarea name="content" id="content-textarea"></textarea>
       <label for="rating-select">Rating:</label>
       <select name="rating" id="rating-select">
@@ -46,7 +26,7 @@
       <button type="submit">Add Review</button>
     </form>
   
-      <% if (restaurant.reviews.length) { %>
+      <% if (restaurant.review.length) { %>
       <table>
         <thead>
           <tr>
@@ -56,11 +36,11 @@
           </tr>
         </thead>
         <tbody>
-          <% let total = 0 %> 
-          <% restaurant.reviews.forEach(function(review) { %>
-            <% total += review.rating %>
+         
+          <% restaurant.ratings.forEach(function(rating) { %>
+            
             <tr>
-              <td><%= review.createdAt.toLocaleDateString() %></td>
+             
               <td><%= review.content %></td>
               <td><%= review.rating %></td>
             </tr>

@@ -21,7 +21,6 @@ function index(req, res) {
   }
   
   function create(req, res) {
-    req.body.nowShowing = !!req.body.nowShowing
     for (let key in req.body) {
       if (req.body[key] === '') delete req.body[key]
     }
@@ -38,6 +37,7 @@ function index(req, res) {
           Restaurant.find({_id: {$nin: restaurant.review}}, function(error, reviews) {
             res.render('restaurants/show', {
               title: 'Restaurant Detail', 
+              restaurant,
               reviews,
               error
             })
