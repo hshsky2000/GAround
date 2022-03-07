@@ -16,12 +16,12 @@ function index(req, res) {
 
   function newRestaurant(req, res) {
     res.render('restaurants/new', {
-      title: 'All Restaurants'
+      title: 'Add Restaurants'
     });
   }
   
   function create(req, res) {
-    req.body.review = !!req.body.review
+    req.body.nowShowing = !!req.body.nowShowing
     for (let key in req.body) {
       if (req.body[key] === '') delete req.body[key]
     }
@@ -35,11 +35,10 @@ function index(req, res) {
         Restaurant.findById(req.params.id)
         .populate('cast')
         .exec(function(error, restaurant) {
-          Performer.find({_id: {$nin: restaurant.cast}}, function(error, performers) {
+          Review.find({_id: {$nin: restaurant.cast}}, function(error, reviews) {
             res.render('restaurants/show', {
               title: 'Restaurant Detail', 
-              ƒ,
-              performers,
+              reviews,
               error
             })
           })
@@ -84,11 +83,11 @@ function index(req, res) {
   export {
       index,
       newRestaurant as new,
-      show,
       create,
       deleteRestaurant as delete,
       edit,
       update,
-      createReview
+      createReview,
+      show
 
   }
