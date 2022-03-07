@@ -16,7 +16,7 @@ function index(req, res) {
 
   function newRestaurant(req, res) {
     res.render('restaurants/new', {
-      title: 'Add Restaurants'
+      title: 'Add Restaurants',
     });
   }
   
@@ -33,9 +33,9 @@ function index(req, res) {
  
     function show(req, res) {
         Restaurant.findById(req.params.id)
-        .populate('cast')
+        .populate('review')
         .exec(function(error, restaurant) {
-          Review.find({_id: {$nin: restaurant.cast}}, function(error, reviews) {
+          Restaurant.find({_id: {$nin: restaurant.review}}, function(error, reviews) {
             res.render('restaurants/show', {
               title: 'Restaurant Detail', 
               reviews,
