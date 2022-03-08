@@ -1,29 +1,5 @@
 body{
-    background-color: lightcoral;
+    background-color: rgb(47, 56, 59);
 }
 
-nav{
-    display: flex;
-    justify-content: space-evenly;
-    font-size: 3rem;
-    background-color: black;
-    font-family: 'Courier New', Courier, monospace;
-}
-nav :hover{
-    color: rgb(118, 200, 95);
-}
-
-a{
-    text-decoration: none;
-    color: whitesmoke;
-}
-
-button{
-    font-size: 2rem;
-    margin: 0% 0% 5% 50%;
-    border: 0.1em solid white;
-    border-radius: 0.12em;
-
-    
-}
 

@@ -22,6 +22,12 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   margin: 0;
+  
+}
+
+h1{
+  display: flex;
+  justify-content: center;
 }
 
 nav {
@@ -29,6 +35,27 @@ nav {
   font-size: 1.6rem;
   display: flex;
   justify-content: center;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 3rem;
+  background-color: black;
+  align-content: center;
+}
+nav :hover{
+    color: rgb(118, 200, 95);
+}
+
+a{
+  text-decoration: none;
+  color: whitesmoke;
+  
+}
+
+button{
+  font-size: 2rem;
+  margin: 0% 0% 5% 50%;
+  border: 0.1em solid white;
+  border-radius: 0.12em;
 }
 
 main {
