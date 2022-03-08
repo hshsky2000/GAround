@@ -3,9 +3,9 @@ import { Restaurant } from '../models/restaurant.js'
 function index(req, res) {
     Restaurant.find({})
     .then(restaurants => {
-      res.render('restaurants/index', {
+      res.render('index', {
         restaurants,
-        title: "Restaurants"
+        title: "!Restaurants"
       })
     })
     .catch(err => {

@@ -71,8 +71,8 @@ app.use('/profiles', profilesRouter)
 // mounted routers
 app.use(methodOverride('_method'))
 
-app.use('/', indexRouter)
-app.use('/restaurants', restaurantsRouter)
+
+
 
 
 // catch 404 and forward to error handler
