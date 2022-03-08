@@ -66,7 +66,7 @@ function index(req, res) {
         for (let key in req.body) {
           if (req.body[key] === '') delete req.body[key]
         }
-        Restaurant.findByIdAndUpdate(req.params.id, req.body, function(err, movie) {
+        Restaurant.findByIdAndUpdate(req.params.id, req.body, function(err, restaurant) {
           res.redirect(`/restaurants/${restaurant._id}`)
         })
       }

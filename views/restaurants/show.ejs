@@ -15,9 +15,7 @@
     <h2>Reviews</h2>
     <form 
       action="/restaurants/<%= restaurant._id %>/reviews"
-      method="POST"
-    >
-     
+      method="POST">
       <textarea name="content" id="content-textarea"></textarea>
       <label for="rating-select">Rating:</label>
       <select name="rating" id="rating-select">
@@ -58,6 +56,13 @@
     <% } else { %>
       <h3>No Reviews Yet</h3>
     <% } %>
+
+    <div>
+      <%= restaurant.title %> 
+      <a href="/restaurants/<%= restaurant._id %>/edit">
+        <button>Edit </button>
+      </a>
+    </div>
   </main>
 
 <%- include('../partials/footer') %>

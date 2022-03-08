@@ -7,22 +7,26 @@
       <label for="name-input">Name:</label>
       <input type="text" name="name" value="<%= restaurant.name %>" id="name-input">
     
-      <label for="mpaa-rating-select">MPAA Rating</label>
-      <select name="mpaaRating" id="mpaa-rating-select" >
-        <option value="<%= restaurant.mpaaRating %>"><%= restaurant.mpaaRating %></option>
-        <option value="G">G</option>
-        <option value="PG">PG</option>
-        <option value="PG-13">PG-13</option>
-        <option value="R">R</option>
+       <form 
+      action="/restaurants/<%= restaurant._id %>/reviews"
+      method="POST">
+      <textarea name="content" id="content-textarea"></textarea>
+      <label for="rating-select">Rating:</label>
+      <select name="rating" id="rating-select">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
       </select>
-      <label for="now-showing-checkbox">Now Showing:</label>
-      <input 
-        type="checkbox"
-        name="nowShowing"
-        <%= restaurant.nowShowing ? 'checked' : '' %>
-        id="now-showing-checkbox"
-      >
-      <button type="submit">Save Restaurant</button>
+      <button type="submit">Add Review</button>
+      <label for="menu-select">Menu</label>
+    <select name="menu" id="menu-select">
+      <option value="Bowl">Bowl</option>
+      <option value="Sandwich/burger">Sandwich/burger</option>
+      <option value="Salad">Salad</option>
+    </form>
+  
     </form>
   </main>
 
