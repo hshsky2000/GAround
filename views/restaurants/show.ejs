@@ -1,16 +1,20 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/show.css" />
 <%- include('../partials/nav') %>
 
 <main>
+    <h2><a href="/restaurants">Go back</a></h2>
     <h1><%= title %></h1>
     <section>
       <div>Name: </div>
       <div><%= restaurant.name %></div>
+      <div>Menu: </div>
+      <div><%= restaurant.menu %></div>
     </section>
   
     <h2>Reviews</h2>
     <form 
-      action="/restaurants/<%= restaurant._id %>/review"
+      action="/restaurants/<%= restaurant._id %>/reviews"
       method="POST"
     >
      
@@ -30,26 +34,24 @@
       <table>
         <thead>
           <tr>
-            <th>Date</th>
             <th>Review</th>
             <th>Rating</th>
+            
           </tr>
         </thead>
         <tbody>
          
-          <% restaurant.ratings.forEach(function(rating) { %>
+          <% restaurant.review.forEach(function(r) { %>
             
             <tr>
              
-              <td><%= review.content %></td>
-              <td><%= review.rating %></td>
+              <td><%= r.content %></td>
+              <td><%= r.rating %></td>
             </tr>
           <% }) %>
           <tr>
             <td colspan="2"></td>
-            <td>
-              <strong><%= (total / restaurant.reviews.length).toFixed(1) %></strong>
-            </td>
+            
           </tr>
         </tbody>
       </table>

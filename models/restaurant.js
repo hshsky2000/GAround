@@ -10,9 +10,16 @@ const reviewSchema = new Schema({
   })
 
 const restaurantSchema = new Schema({
-    name: String,
+    name: {
+      type: String,
+      required: true
+    },
     address: String,
     phone: Number,
+    menu: {
+      type: String,
+      required: true
+    },
     review: [reviewSchema]
 })
 

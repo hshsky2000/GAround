@@ -34,11 +34,11 @@ function index(req, res) {
         Restaurant.findById(req.params.id)
         .populate('review')
         .exec(function(error, restaurant) {
-          Restaurant.find({_id: {$nin: restaurant.review}}, function(error, reviews) {
+          Restaurant.find({_id: {$nin: restaurant.review}}, function(error, review) {
             res.render('restaurants/show', {
               title: 'Restaurant Detail', 
               restaurant,
-              reviews,
+              review,
               error
             })
           })
@@ -73,7 +73,7 @@ function index(req, res) {
       
       function createReview(req, res) {
         Restaurant.findById(req.params.id, function(err, restaurant) {
-          restaurant.reviews.push(req.body)
+          restaurant.review.push(req.body)
           restaurant.save(function(err) {
             res.redirect(`/restaurants/${restaurant._id}`)
           })
