@@ -3,50 +3,28 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <h1> <%= user ? user.profile.name : "Login to use" %></h1>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
+  <section>
+    <h2>Restaurants near GA</h2>
+    <div class="flex">
+      <% restaurants.forEach((r) => { %>
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="https://image.shutterstock.com/image-photo/interior-cozy-restaurant-contemporary-design-600w-709645828.jpg" alt="Card image cap">
+          <ul class="rating">
+            <li><i class="fa-solid fa-star"></i></li>
+            <li><i class="fa-solid fa-star"></i></li>
+            <li><i class="fa-solid fa-star"></i> </li>
+            <li><i class="fa-solid fa-star"></i></li>
+          </ul>
+        
+          <div class="card-body">
+            <h5 class="card-title"><%= r.name %> </h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      <% }) %>
     </div>
-  <% } %>
-  
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="https://image.shutterstock.com/image-photo/interior-cozy-restaurant-contemporary-design-600w-709645828.jpg" alt="Card image cap">
-    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-    <div class="card-body">
-      <h5 class="card-title">GA restaurant</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-
-
-
-
-  <tbody>
-
-    <!-- <% restaurants.forEach((r) => { %>
-    <tr>
-      <td><%= r.name %></td>
-      <td><%= r.address %></td>
-      <td><a href="/restaurants/<%= r._id %>">DETAILS</a></td>
-      <td>
-        <form action="/restaurants/<%= r._id %>?_method=DELETE" method="POST">
-          <button>X</button>
-        </form>
-      </td>
-    </tr>
-    <% }) %> -->
-  </tbody>
-
-  
-
-
-  
+  </section>
 </main>
 
 

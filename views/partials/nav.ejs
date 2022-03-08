@@ -10,6 +10,12 @@
       <a href="/auth/logout">
         <button type="submit">Logout</button>
       </a>
+      <div class="avatar">
+        <img
+          src="<%= user.profile.avatar %>"
+          alt="<%= user.profile.name %> avatar"
+        />
+      </div>
     <% } else { %>
       <a href="/auth/google" class="siwg-link">
         <button type="submit" class="siwg">

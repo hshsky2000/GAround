@@ -59,12 +59,47 @@ button{
 }
 
 main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  width: 80%;
+  margin: 1rem auto;
 }
 
 h1 {
   font-size: 3.6rem;
 }
+
+h2 {
+  margin-bottom: 1.5rem;
+}
+
+.rating{
+  margin-left: 1rem;
+  padding: 0;
+  
+}
+
+.rating li{
+  display: inline;
+}
+
+.avatar{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  margin-top: 6px;
+}
+
+.avatar img{
+  width: 100%;
+}
+
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: flex-start;
+}
+
