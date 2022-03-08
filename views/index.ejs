@@ -13,8 +13,27 @@
     </div>
   <% } %>
   
-  <h2><a href="/restaurants/new">Add a restaurant!</a></h2>
-  <h2><a href="/restaurants">Show me all the restaurants!</a></h2>
+  <tbody>
+    <% restaurants.forEach((r) => { %>
+    <tr>
+      <td><%= r.name %></td>
+      <td><%= r.address %></td>
+      <td><a href="/restaurants/<%= r._id %>">DETAILS</a></td>
+      <td>
+        <form action="/restaurants/<%= r._id %>?_method=DELETE" method="POST">
+          <button>X</button>
+        </form>
+      </td>
+    </tr>
+    <% }) %>
+  </tbody>
+
+  
+
+
+  
 </main>
+
+
 
 <%- include('./partials/footer') %>
