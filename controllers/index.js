@@ -14,15 +14,15 @@ function index(req, res) {
     })
   }
 
-  async function fetchUser() {
-    const response = await fetch('https://api.yelp.com/v3/businesses/search?term=restaurants&location=509 7th st Washington DC&radius=2000')
-    const data = await response.json()
-    console.log(data)
-}
+//   async function fetchUser() {
+//     const response = await fetch('https://api.yelp.com/v3/businesses/search?term=restaurants&location=509 7th st Washington DC&radius=2000')
+//     const data = await response.json()
+//     console.log(data)
+// }
 
-fetchUser()
+// fetchUser()
 
   export{
       index,
-      fetchUser,
+      
   }

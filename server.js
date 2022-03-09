@@ -41,6 +41,7 @@ app.use(
     path.join(path.dirname(fileURLToPath(import.meta.url)), 'public')
   )
 )
+app.use(favicon(path.join(__dirname, 'favicon_io(1)', 'favicon-16x16.png')));
 
 // session middleware
 app.use(
