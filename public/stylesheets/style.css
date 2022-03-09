@@ -1,3 +1,4 @@
+
 html {
   box-sizing: border-box;
 }
@@ -29,7 +30,7 @@ nav {
   
   font-size: 1.6rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   font-size: 3rem;
   background-color: #4A4A4A;
   align-items: center;
@@ -51,6 +52,7 @@ button{
   margin: 0% 0% 1% 25%;
   border: 0.1em solid white;
   border-radius: 0.12em;
+  margin-left: 200px;
 }
 
 main {
@@ -84,7 +86,7 @@ h2 {
   display: grid;
   justify-content: center;
   align-content: center;
-  margin: 6px 10px;
+  margin: 6px -50px 6px -60px;
   object-position: 20px 95px;
 }
 
