@@ -26,7 +26,7 @@ const config = {
     }
 }
 
-const url = 'https://api.yelp.com/v3/businesses/search?term=restaurants&location=509 7th st Washington DC&radius=2000'
+const url = 'https://api.yelp.com/v3/businesses/search?term=restaurants&location=509 7th st Washington DC&radius=2000&price=1,2'
 
 async function getRestaurantsFromYelp(){
     return await axios.get(url, config)

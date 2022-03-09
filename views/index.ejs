@@ -15,13 +15,14 @@
           <div class="rating">
             <li><i class="fa-solid fa-star"></i><%= r.rating %></li>
           </div>
-        
+          
           <div class="card-body">
             <h5 class="card-title"><%= r.name %> </h5>
             <p><%= r.price %></p>
-            <p><%= r.location.display_address, %></p>
-            <p class="card-text">Some quick example text </p>
+            <p><%= r.categories[0].title %></p>
+            <p>Location: <%= r.location.display_address %></p>
             <a href="/restaurants/<%= r._id %>" class="btn btn-primary">Detail</a>
+            <a href="<%= r.url %> class=btn btn-primary" class="btn btn-primary">Website</a>
           </div>
         </div>
       <% }) %>
