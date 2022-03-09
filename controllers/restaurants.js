@@ -1,5 +1,6 @@
 import { Restaurant } from '../models/restaurant.js'
 
+
 function index(req, res) {
     Restaurant.find({})
     .then(restaurants => {
