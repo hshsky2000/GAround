@@ -32,11 +32,12 @@ nav {
   display: flex;
   justify-content: space-evenly;
   font-size: 3rem;
-  background-color: #4A4A4A;
+  background: linear-gradient(110deg, #ca5d35 60%, #ff934b 60%);;
   align-items: center;
 }
 nav :hover{
-    color: #EE7053;
+    background-color: rgb(231, 154, 60);
+    border-radius: 4%;
     text-decoration: none;
 }
 
