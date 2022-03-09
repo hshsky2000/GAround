@@ -36,9 +36,9 @@ nav {
   align-items: center;
 }
 nav :hover{
-    background-color: rgb(231, 154, 60);
-    border-radius: 4%;
-    text-decoration: none;
+    color: #e2aa95;
+    
+   
 }
 
 a{
@@ -54,6 +54,7 @@ button{
   border: 0.1em solid white;
   border-radius: 0.12em;
   margin-left: 200px;
+  text-decoration: none;
 }
 
 main {
@@ -102,3 +103,15 @@ h2 {
   justify-content: flex-start;
 }
 
+.img-container{
+  height: 100px;
+  overflow: hidden;
+}
+
+.img-container img {
+  object-fit: cover;
+}
+
+.fa-solid{
+  color: rgb(243, 124, 124)
+}

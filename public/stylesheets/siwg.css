@@ -22,7 +22,6 @@
 
 /* This pre-loads the siwg focus and active buttons */
 .siwg::after {
-  vertical-align: right;
   position: absolute;
   width: 0;
   height: 0;
