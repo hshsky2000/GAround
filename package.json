@@ -19,5 +19,21 @@
     "passport": "^0.5.2",
     "passport-google-oauth20": "^2.0.0",
     "serve-favicon": "^2.5.0"
-  }
+  },
+  "main": "server.js",
+  "bin": {
+    "men_template": "bin/www.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hshsky2000/Unit-2-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hshsky2000/Unit-2-project/issues"
+  },
+  "homepage": "https://github.com/hshsky2000/Unit-2-project#readme",
+  "description": ""
 }
