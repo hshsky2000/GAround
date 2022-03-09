@@ -37,8 +37,7 @@ nav {
 }
 nav :hover{
     color: #e2aa95;
-    
-   
+    text-decoration: none; 
 }
 
 a{
