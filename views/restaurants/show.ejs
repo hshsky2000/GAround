@@ -2,67 +2,7 @@
 <link rel="stylesheet" href="/stylesheets/show.css" />
 <%- include('../partials/nav') %>
 
-<main>
-    <h2><a href="/">Go back</a></h2>
-    <h1><%= title %></h1>
-    <section>
-      <div>Name: </div>
-      <div><%= restaurant.name %></div>
-      <div>Menu: </div>
-      <div><%= restaurant.menu %></div>
-    </section>
-  
-    <h2>Reviews</h2>
-    <form 
-      action="/restaurants/<%= restaurant._id %>/reviews"
-      method="POST">
-      <textarea name="content" id="content-textarea"></textarea>
-      <label for="rating-select">Rating:</label>
-      <select name="rating" id="rating-select">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5" selected>5</option>
-      </select>
-      <button type="submit">Add Review</button>
-    </form>
-  
-      <% if (restaurant.review.length) { %>
-      <table>
-        <thead>
-          <tr>
-            <th>Review</th>
-            <th>Rating</th>
-            
-          </tr>
-        </thead>
-        <tbody>
-         
-          <% restaurant.review.forEach(function(r) { %>
-            
-            <tr>
-             
-              <td><%= r.content %></td>
-              <td><%= r.rating %></td>
-            </tr>
-          <% }) %>
-          <tr>
-            <td colspan="2"></td>
-            
-          </tr>
-        </tbody>
-      </table>
-    <% } else { %>
-      <h3>No Reviews Yet</h3>
-    <% } %>
 
-    <div>
-      <%= restaurant.title %> 
-      <a href="/restaurants/<%= restaurant._id %>/edit">
-        <button>Edit </button>
-      </a>
-    </div>
-  </main>
+    
 
 <%- include('../partials/footer') %>
