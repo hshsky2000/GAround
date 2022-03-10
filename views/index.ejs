@@ -22,7 +22,6 @@
             <h5 class="card-title"><%= r.name %> </h5>
             <p><%= r.price %></p>
             <p><%= r.categories[0].title %></p>
-            <p>Location: <%= r.location.display_address %></p>
             <% if (user) { %>
               <a href="/restaurants/<%= r.id %>" class="btn btn-primary">Detail</a>
             <% } %>

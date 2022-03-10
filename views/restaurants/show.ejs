@@ -9,16 +9,16 @@
         <img src=<%= r.image_url%> alt="">
       </div>
       <h3><%= r.name %> </h3>
-      <span>Rating</span>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet unde ducimus molestias tempora fugit, eligendi architecto, ratione saepe debitis laudantium nemo reiciendis minima placeat dolorem perferendis, quasi dicta consequuntur mollitia?</p>
-
-      <h3>Restaurant Information</h3>
-      <p><%= r.display_phone %> </p>
+      
+      <div class="rating">
+        <li><i class="fa-solid fa-star"></i><%= r.rating %></li>
+      </div>
+      <p><%= r.categories[0].title %></p>
+      
       <span><%= r.location.display_address[0] %> </span>
       <p><%= r.location.display_address[1] %> </p>
+      <p><%= r.display_phone %> </p>
       
-
-      <h4>Hours of opearation</h4>
     </div>
     <div class="right-col">
       <h3>Leave a Review</h3>
