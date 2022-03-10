@@ -33,13 +33,13 @@ function index(req, res) {
  
     function show(req, res) {
         Restaurant.findById(req.params.id)
-        .populate('review')
+        // .populate('review')
         .exec(function(error, restaurant) {
-          Restaurant.find({_id: {$nin: restaurant.review}}, function(error, review) {
+          Restaurant.find({_id: {$nin: restaurant}}, function(error, review) {
             res.render('restaurants/show', {
               title: 'Restaurant Detail', 
               restaurant,
-              review,
+              // review,
               error
             })
           })
