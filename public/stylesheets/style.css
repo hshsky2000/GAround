@@ -27,7 +27,7 @@ body {
 }
 
 nav {
-  
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif  ;
   font-size: 1.6rem;
   display: flex;
   justify-content: space-evenly;
@@ -100,6 +100,7 @@ h2 {
   flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: flex-start;
+  
 }
 
 .img-container{
@@ -113,4 +114,8 @@ h2 {
 
 .fa-solid{
   color: rgb(243, 124, 124)
+}
+
+.logo{
+  display: inline;
 }

@@ -4,5 +4,31 @@
 <section>
    
    
+    
+      <h2>Reviews</h2>
+      <h2><a href="/">Go back</a></h2>
+      <% restaurants.forEach((r) => { %>
+    <h1><%= r.name %></h1>
+    <section>
+      <div>Name: </div>
+      <div></div>
+      <% }) %>
+    </section>
+  
+      <form>
+        <textarea name="content" id="content-textarea"></textarea>
+        <label for="rating-select">Rating:</label>
+        <select name="rating" id="rating-select">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5" selected>5</option>
+        </select>
+        <button type="submit">Add Review</button>
+      </form>
 
+      
+    
+        
 <%- include('../partials/footer') %>
