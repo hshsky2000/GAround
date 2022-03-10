@@ -119,3 +119,18 @@ h2 {
 .logo{
   display: inline;
 }
+
+.main-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-col,
+.right-col {
+  width: 40%;
+  margin: 1rem;
+}
+
+.image-container img {
+  width: 100%;
+}

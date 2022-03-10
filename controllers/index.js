@@ -36,4 +36,5 @@ async function getRestaurantsFromYelp(){
 
   export{
       index,
+      getRestaurantsFromYelp,
   }
