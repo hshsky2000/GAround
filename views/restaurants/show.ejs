@@ -68,12 +68,14 @@
   <% } else { %>
     <% if (reviews.length) { %>
       <h3>Read lastest Reviews</h3>
+      <tbody>
       <% reviews.forEach(review => { %>
       <tr>
         <td><%= review.content %></td>
         <td><%= review.rating %></td>
       </tr>    
       <% }) %>
+      </tbody>
       <% } else { %>
         <h3>No Reviews Yet</h3>
     <% } %>
