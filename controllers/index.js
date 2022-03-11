@@ -6,7 +6,7 @@ function index(req, res) {
     .then(restaurants => {
         getRestaurantsFromYelp()
             .then(result => {
-                console.log(result.data)
+                // console.log(result.data)
                 res.render('index', {
                     restaurants: result.data.businesses,
                     title: "!Restaurants"

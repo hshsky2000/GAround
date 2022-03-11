@@ -1,5 +1,5 @@
-
 import { Restaurant } from '../models/restaurant.js'
+import { Review } from '../models/review.js'
 import { getRestaurantsFromYelp } from './index.js'
 import axios from 'axios'
 
@@ -42,11 +42,16 @@ function show(req, res) {
   const restaurantId = req.params.id
   getRestaurantDetailsFromYelp(restaurantId)
     .then(restaurant => {
-      console.log(restaurant)
-      res.render('restaurants/show', {
-        r: restaurant.data,
-        title: 'Restaurant detail'
-      })
+      Review.find({restaurantId: req.params.id})
+        .then(reviews => {
+          console.log(reviews)
+          res.render('restaurants/show', {
+            r: restaurant.data,
+            title: 'Restaurant detail',
+            reviews
+          })
+        })
+        .catch(err => console.log(err))
     })
     .catch(err => console.log(err))
 }
@@ -78,12 +83,15 @@ function update(req, res) {
 }
       
 function createReview(req, res) {
-  Restaurant.findById(req.params.id, function(err, restaurant) {
-    restaurant.review.push(req.body)
-    restaurant.save(function(err) {
-      res.redirect(`/restaurants/${restaurant._id}`)
+  console.log(req.body)
+  req.body.rating = parseInt(req.body.rating)
+  console.log(req.body)
+  Review.create(req.body)
+    .then(review => {
+        console.log('review', review)
+        res.redirect(`/restaurants/${req.params.id}`)
     })
-  })
+    .catch(err => console.log(err))
 }
 
 const config = {
@@ -100,6 +108,12 @@ async function getRestaurantDetailsFromYelp(restaurantId){
         .catch(error => console.log(error))
 }
     
+// async function createReview(findByIdAndUpdate){
+//   const url = `https://api.yelp.com/v3/businesses/${restaurantId}`
+//   return await axios.get(url, config)
+//   const data = await response.json();
+// }
+
 
 
 export {

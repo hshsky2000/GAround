@@ -14,58 +14,71 @@
         <li><i class="fa-solid fa-star"></i><%= r.rating %></li>
       </div>
       <p><%= r.categories[0].title %></p>
-      
       <span><%= r.location.display_address[0] %> </span>
       <p><%= r.location.display_address[1] %> </p>
       <p><%= r.display_phone %> </p>
       
     </div>
-    <div class="right-col">
-      <h3>Leave a Review</h3>
-      <form action="">
-        <div>
-        <label for="review">What were your thoughts?</label>
-        <textarea name="" id="review" style="width:100%;" rows="10"></textarea>
-      </div>
-      <div>
-        <label for="rating">Select a rating</label>
-        <select name="" id="rating">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-      </div>
-        <div>
+    <h2>Reviews</h2>
+  <form 
+    id="add-review-form"
+    action="/restaurants/<%= r.id %>/reviews"
+    method="POST"
+  >
+    <label for="content-textarea"></label>
+    <textarea name="content" id="content-textarea"></textarea>
+    <label for="rating-select"></label>
+    <select name="rating" id="rating-select">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5" selected>5</option>
+    </select>
+    <input type="hidden" name="restaurantId" value=<%= r.id %>> 
+    <button type="submit">Add Review</button>
+  </form>
 
-          <button style="width:100%;margin:0;" type="submit">Leave review</button> 
-        </div>
-      </form>
-
-      <hr>
-
-      <h3>Previous Reviews</h3>
-      <p>Review Title</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam omnis deserunt facere, modi facilis quo iusto mollitia sunt similique nihil?...</p>
-      <p>Review left by: Sun Moon</p>
-      <br><br>
-
-      <p>Review Title</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam omnis deserunt facere, modi facilis quo iusto mollitia sunt similique nihil?...</p>
-      <p>Review left by: Sun Moon</p>
-      <br><br>
-
-      <p>Review Title</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam omnis deserunt facere, modi facilis quo iusto mollitia sunt similique nihil?...</p>
-      <p>Review left by: Sun Moon</p>
-      <br><br>
-
-      <p>Review Title</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam omnis deserunt facere, modi facilis quo iusto mollitia sunt similique nihil?...</p>
-      <p>Review left by: Sun Moon</p>
-      <br><br>
-    </div>
+	<% if (r.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Review</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% let total = 0 %> 
+        <% review.forEach(function(r) { %>
+          <% total += r.rating %>
+          <tr>
+            <td><%= r.createdAt.toLocaleDateString() %></td>
+            <td><%= r.content %></td>
+            <td><%= r.rating %></td>
+          </tr>
+        <% }) %>
+        <tr>
+          <td colspan="2"></td>
+          <td>
+            <strong><%= (total / restaurant.reviews.length).toFixed(1) %></strong>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  <% } else { %>
+    <% if (reviews.length) { %>
+      <h3>Read lastest Reviews</h3>
+      <% reviews.forEach(review => { %>
+      <tr>
+        <td><%= review.content %></td>
+        <td><%= review.rating %></td>
+      </tr>    
+      <% }) %>
+      <% } else { %>
+        <h3>No Reviews Yet</h3>
+    <% } %>
+  <% } %>
   </div>
 </main>
     
