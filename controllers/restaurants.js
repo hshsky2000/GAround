@@ -94,6 +94,13 @@ function createReview(req, res) {
     .catch(err => console.log(err))
 }
 
+
+function deleteReview(req, res) {
+  Review.findByIdAndDelete(req.params.id, function(err, review) {
+    res.redirect('/restaurants')
+  })
+}
+
 const config = {
   headers: {
       Authorization: process.env.YELP_API_KEY
@@ -115,6 +122,5 @@ export {
       edit,
       update,
       createReview,
-      show
-
-  }
+      show,
+    }

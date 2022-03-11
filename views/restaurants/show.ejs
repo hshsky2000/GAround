@@ -81,6 +81,24 @@
         <h3>No Reviews Yet</h3>
     <% } %>
   <% } %>
+
+ 
+  
+    <%# New code below %>
+    <tbody>
+      <% reviews.forEach((r) => { %>
+      <tr>
+        
+        <td>
+          <form action="/restaurants/<%= r.review %>?_method=DELETE" method="POST">
+            <button>X</button>
+          </form>
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+    <%# New code above %>
+  
 </tbody>
 </table>
   </div>
