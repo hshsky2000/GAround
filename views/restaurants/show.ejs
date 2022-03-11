@@ -64,8 +64,7 @@
             <strong><%= (total / restaurant.reviews.length).toFixed(1) %></strong>
           </td>
         </tr>
-      </tbody>
-    </table>
+     
   <% } else { %>
     <% if (reviews.length) { %>
       <h3>Read lastest Reviews</h3>
@@ -79,6 +78,8 @@
         <h3>No Reviews Yet</h3>
     <% } %>
   <% } %>
+</tbody>
+</table>
   </div>
 </main>
     
