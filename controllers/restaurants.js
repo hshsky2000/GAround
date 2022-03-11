@@ -98,23 +98,14 @@ const config = {
   headers: {
       Authorization: process.env.YELP_API_KEY
   }
-}
-    
+} 
     
 async function getRestaurantDetailsFromYelp(restaurantId){
   const url = `https://api.yelp.com/v3/businesses/${restaurantId}`
     return await axios.get(url, config)
         .then(res => res)
         .catch(error => console.log(error))
-}
-    
-// async function createReview(findByIdAndUpdate){
-//   const url = `https://api.yelp.com/v3/businesses/${restaurantId}`
-//   return await axios.get(url, config)
-//   const data = await response.json();
-// }
-
-
+}  
 
 export {
       index,

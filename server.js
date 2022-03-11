@@ -9,7 +9,6 @@ import methodOverride from 'method-override'
 import passport from 'passport'
 import { passUserToView } from './middleware/middleware.js'
 
-
 // connect to MongoDB with mongoose
 import('./config/database.js')
 
@@ -73,10 +72,6 @@ app.use('/profiles', profilesRouter)
 
 // mounted routers
 app.use(methodOverride('_method'))
-
-
-
-
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

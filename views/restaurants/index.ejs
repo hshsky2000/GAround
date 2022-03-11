@@ -1,14 +1,10 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
-
 <section>
-   
-   
-    
       <h2>Reviews</h2>
       <h2><a href="/">Go back</a></h2>
       <% restaurants.forEach((r) => { %>
-    <h1><%= r.name %></h1>
+      <h1><%= r.name %></h1>
     <section>
       <div>Name: </div>
       <div></div>
@@ -27,8 +23,4 @@
         </select>
         <button type="submit">Add Review</button>
       </form>
-
-      
-    
-        
 <%- include('../partials/footer') %>

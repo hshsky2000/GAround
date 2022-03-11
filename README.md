@@ -1,6 +1,10 @@
 # GAround
-
-## List restaurants near GA DC campus
+* List restaurants within 0.38 mile around DC GA campus
+* Write Restaurant reviews
+* Read others reviews about the restaurant
+* Price point by '$' 
+* Review grade by '⭐️' 
+* API from Yelp
 
 ## Click [here](https://unit-2-project-sunhwang.herokuapp.com) to GAround
 
