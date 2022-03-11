@@ -20,6 +20,8 @@ Wireframe
 * Mongoose
 * Node.js
 * Express
+* Boostrap
+* Font Awesome
 * HTML
 * CSS
 * JavaScript
