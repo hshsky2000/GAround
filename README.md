@@ -6,7 +6,7 @@
 * Review grade by '⭐️' 
 * API from Yelp
 
-* Getting Started
+# Getting Started
 ## Click [here](https://unit-2-project-sunhwang.herokuapp.com) to GAround
 
 ## Click [here](https://trello.com/b/DsFDxYMo/unit-2-garound) to Trello
