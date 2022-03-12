@@ -1,6 +1,18 @@
 <%- include('../partials/html-head') %>
 <script src="https://kit.fontawesome.com/1e7783e7e3.js" crossorigin="anonymous"></script>
+
 <link rel="stylesheet" href="/stylesheets/show.css" />
+<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPhIVirUEZd_JPXIS7SgcKI5DnE7OCN8U&callback=initMap&libraries=&v=weekly&channel=2"
+      defer
+    ></script>
+
+<style>
+  #map{
+    height: 300px;
+    width: 300px;
+  }
+</style>
 <%- include('../partials/nav') %>
 
 <main>
@@ -15,6 +27,27 @@
         <li><i class="fa-solid fa-star"></i><%= r.rating %></li>
       </div>
       <p><%= r.categories[0].title %></p>
+      <script>
+        // Initialize and add the map
+ejs
+        console.log(lat)
+      function initMap() {
+        // The location of Uluru
+        const uluru = { lat: 25.333, lng: 131.036 };
+        // The map, centered at Uluru
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 4,
+          center: uluru,
+        });
+        // The marker, positioned at Uluru
+        const marker = new google.maps.Marker({
+          position: uluru,
+          map: map,
+        });
+      }
+      </script>
+      <div id="map"></div>
+
       <span><%= r.location.display_address[0] %> </span>
       <p><%= r.location.display_address[1] %> </p>
       <p><%= r.display_phone %> </p>
@@ -73,6 +106,9 @@
       <% reviews.forEach(review => { %>
       <tr>
         <td><%= review.content %></td>
+        <form action="/restaurants/<%= review._id %>?_method=DELETE" method="POST">
+          <button>X</button>
+        </form>
         <td><%= review.rating %></td>
       </tr>    
       <% }) %>
@@ -82,22 +118,7 @@
     <% } %>
   <% } %>
 
- 
-  
-    <%# New code below %>
-    <tbody>
-      <% reviews.forEach((r) => { %>
-      <tr>
-        
-        <td>
-          <form action="/restaurants/<%= r.review %>?_method=DELETE" method="POST">
-            <button>X</button>
-          </form>
-        </td>
-      </tr>
-      <% }) %>
-    </tbody>
-    <%# New code above %>
+    
   
 </tbody>
 </table>

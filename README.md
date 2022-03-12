@@ -6,7 +6,10 @@
 * Review grade by '⭐️' 
 * API from Yelp
 
+* Getting Started
 ## Click [here](https://unit-2-project-sunhwang.herokuapp.com) to GAround
+
+## Click [here](https://trello.com/b/DsFDxYMo/unit-2-garound) to Trello
 
 First page
 ![first-page](https://i.imgur.com/uOFmujN.png)
@@ -25,6 +28,7 @@ Wireframe
 * HTML
 * CSS
 * JavaScript
+* Postman
 
 ### Next steps
 * AAU I want to order food from the app

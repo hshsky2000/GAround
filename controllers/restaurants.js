@@ -123,4 +123,5 @@ export {
       update,
       createReview,
       show,
+      deleteReview
     }
