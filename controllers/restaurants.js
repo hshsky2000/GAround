@@ -28,12 +28,14 @@ function newRestaurant(req, res) {
 }
 
 function create(req, res) {
+  console.log("Hello Sunnnnn")
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key]
   }
   const restaurant = new Restaurant(req.body)
   restaurant.save(function(err) {
     if (err) return res.redirect('/restaurants/new');
+    console.log("Pleaseeeeeeee")
     res.redirect(`/restaurants/${restaurant._id}`);
   });
 }
@@ -58,8 +60,9 @@ function show(req, res) {
 
 function deleteRestaurant(req, res) {
   Restaurant.findByIdAndDelete(req.params.id, function(err, restaurant) {
-    res.redirect('/restaurants')
+    res.redirect('/restaurants/hello')
   })
+  .catch(err => console.log(err))
 }
 
 function edit(req, res) {
@@ -85,10 +88,10 @@ function update(req, res) {
 function createReview(req, res) {
   console.log(req.body)
   req.body.rating = parseInt(req.body.rating)
-  console.log(req.body)
+  console.log(req.body, "Sun hello")
   Review.create(req.body)
     .then(review => {
-        console.log('review', review)
+        
         res.redirect(`/restaurants/${req.params.id}`)
     })
     .catch(err => console.log(err))
@@ -96,8 +99,10 @@ function createReview(req, res) {
 
 
 function deleteReview(req, res) {
+  console.log('wowoowowooowow')
   Review.findByIdAndDelete(req.params.id, function(err, review) {
-    res.redirect('/restaurants')
+    res.redirect(`/restaurants/${req.params.id}`)
+
   })
 }
 

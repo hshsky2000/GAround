@@ -2,7 +2,7 @@
 <script src="https://kit.fontawesome.com/1e7783e7e3.js" crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="/stylesheets/show.css" />
-<script
+<!-- <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPhIVirUEZd_JPXIS7SgcKI5DnE7OCN8U&callback=initMap&libraries=&v=weekly&channel=2"
       defer
     ></script>
@@ -11,7 +11,7 @@
   #map{
     height: 300px;
     width: 300px;
-  }
+  } -->
 </style>
 <%- include('../partials/nav') %>
 
@@ -105,11 +105,14 @@ ejs
       <tbody>
       <% reviews.forEach(review => { %>
       <tr>
+        
         <td><%= review.content %></td>
+        <td><%= review.rating %></td>
         <form action="/restaurants/<%= review._id %>?_method=DELETE" method="POST">
+          <%= console.log(review._id) %> 
           <button>X</button>
         </form>
-        <td><%= review.rating %></td>
+        
       </tr>    
       <% }) %>
       </tbody>
