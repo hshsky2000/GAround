@@ -20,6 +20,7 @@ import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as restaurantsRouter } from './routes/restaurants.js'
 import { router as profilesRouter } from './routes/profiles.js'
+import { router as reviewsRouter } from './routes/reviews.js'
 // create the express app
 const app = express()
 
@@ -69,9 +70,10 @@ app.use('/', indexRouter)
 app.use('/auth', authRouter)
 app.use('/restaurants', restaurantsRouter)
 app.use('/profiles', profilesRouter)
+app.use('/reviews', reviewsRouter)
 
 // mounted routers
-app.use(methodOverride('_method'))
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

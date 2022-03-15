@@ -34,7 +34,39 @@ function index(req, res) {
     })
   }
 
+  function createReview(req, res) {
+    Profile.findById(req.user.profile._id)
+    .then(profile => {
+      profile.reviews.push(req.body)
+      profile.save()
+      .then(() => {
+        res.redirect(`/profiles/${req.user.profile._id}`)
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+  }
+
+  function deleteReview(req, res) {
+    Profile.findById(req.user.profile._id)
+    .then(profile => {
+      profile.cats.remove({_id: req.params.id})
+      profile.save()
+      .then(()=> {
+        res.redirect(`/profiles/${req.user.profile._id}`)
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+  }
+
   export{
       index,
-      show
+      show,
+      createReview,
+      deleteReview as delete,
   }

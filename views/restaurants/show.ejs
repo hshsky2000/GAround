@@ -103,16 +103,19 @@ ejs
     <% if (reviews.length) { %>
       <h3>Read lastest Reviews</h3>
       <tbody>
-      <% reviews.forEach(review => { %>
+      <% reviews.forEach(function(review) { %>
       <tr>
         
         <td><%= review.content %></td>
         <td><%= review.rating %></td>
-        <form action="/restaurants/<%= review._id %>?_method=DELETE" method="POST">
-          <%= console.log(review._id) %> 
-          <button>X</button>
-        </form>
-        
+
+          <% if (review.owner.equals(user?.profile._id)) { %>
+            <form action="/reviews/<%= review._id %>/?_method=DELETE" method="POST">
+              <input type="hidden" value=<%= r.id %> name="restaurant_id">
+              <button type="submit">X</button>
+            </form>
+          <% } %>
+          
       </tr>    
       <% }) %>
       </tbody>

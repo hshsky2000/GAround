@@ -13,7 +13,7 @@ router.post('/', restaurantsCtrl.create)
 router.get("/:id/edit", restaurantsCtrl.edit)
 router.put("/:id", restaurantsCtrl.update)
 router.post('/:id/reviews', restaurantsCtrl.createReview)
-router.delete("/:id", restaurantsCtrl.deleteReview)
+router.delete("/:id/reviews", restaurantsCtrl.deleteReview)
 
 export {
     router
