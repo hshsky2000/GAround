@@ -85,7 +85,16 @@ function update(req, res) {
       
 function createReview(req, res) {
   req.body.rating = parseInt(req.body.rating)
-  Review.create(req.body)
+  const content = req.body.content
+  const rating = req.body.rating
+  const restaurantId = req.body.restaurantId
+  const owner = req.user.profile._id
+  Review.create({
+    content,
+    rating,
+    restaurantId,
+    owner
+  })
     .then(review => {
         
         res.redirect(`/restaurants/${req.params.id}`)
@@ -96,8 +105,8 @@ function createReview(req, res) {
 
 function deleteReview(req, res) {
   Review.findByIdAndDelete(req.params.id, function(err, review) {
-    console.log('testestsetstsetst')
     res.redirect(`/restaurants/${review.restaurantId}`)
+    console.log('testestsetstsetst')
 
   })
 }

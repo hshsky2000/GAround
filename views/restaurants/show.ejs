@@ -109,7 +109,7 @@ ejs
         <td><%= review.content %></td>
         <td><%= review.rating %></td>
 
-          <% if (review.owner.equals(user?.profile._id)) { %>
+          <% if ((review.owner._id.toString()) === (user.profile._id.toString())) { %>
             <form action="/reviews/<%= review._id %>/?_method=DELETE" method="POST">
               <input type="hidden" value=<%= r.id %> name="restaurant_id">
               <button type="submit">X</button>
